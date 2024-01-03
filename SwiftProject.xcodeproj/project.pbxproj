@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				4823B5E12B45541200AD4091 /* ViewControllers */,
-				4823B5E22B45542400AD4091 /* Storuboards */,
+				4823B5E22B45542400AD4091 /* Storyboards */,
 				4823B5E02B45540500AD4091 /* App */,
 				4823B5D52B4553DA00AD4091 /* Assets.xcassets */,
 			);
@@ -82,13 +82,13 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		4823B5E22B45542400AD4091 /* Storuboards */ = {
+		4823B5E22B45542400AD4091 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				4823B5D22B4553D800AD4091 /* Main.storyboard */,
 				4823B5D72B4553DA00AD4091 /* LaunchScreen.storyboard */,
 			);
-			path = Storuboards;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
