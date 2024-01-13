@@ -23,18 +23,16 @@ final class DevelopersViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let typesOfSections = Set(team.map {$0.role})
-        let sortedSections = typesOfSections.sorted { $0.rawValue > $1.rawValue }
-        let numberOfRows: Int
+        let sortedTeam: [Developer]
         
-        switch sortedSections[section] {
+        switch team[section].role {
         case .teamLead:
-            numberOfRows = 1
+            sortedTeam = team.filter { $0.role == .teamLead }
         default:
-            numberOfRows = 5
+            sortedTeam = team.filter { $0.role == .developer }
         }
         
-        return numberOfRows
+        return sortedTeam.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

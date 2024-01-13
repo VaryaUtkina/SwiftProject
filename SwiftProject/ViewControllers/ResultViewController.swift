@@ -1,0 +1,52 @@
+//
+//  ResultViewController.swift
+//  SwiftProject
+//
+//  Created by Варвара Уткина on 13.01.2024.
+//
+
+import UIKit
+
+final class ResultViewController: UIViewController {
+
+    @IBOutlet var resultImage: UIImageView!
+    @IBOutlet var resultLabel: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
+    
+    var answers: [Answer]!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.hidesBackButton = true
+        updateResult()
+    }
+
+    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
+}
+
+// MARK: - Private Methods
+extension ResultViewController {
+    private func updateResult() {
+        let correctAnswers = answers.filter { $0.type == .correct }
+        let score = correctAnswers.count
+        let resultPercent = Double(score) / Double(answers.count)
+        
+        switch resultPercent {
+        case 0 ..< 0.75:
+            resultImage.image = UIImage(named: "failed")
+            resultLabel.text = "Миссия провалена"
+        default:
+            resultImage.image = UIImage(named: "succeed")
+            resultLabel.text = "Успешный успех"
+        }
+        
+        scoreLabel.text = """
+Правильных ответов:
+\(score) из \(answers.count)
+"""
+        
+    }
+}
