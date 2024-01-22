@@ -8,19 +8,33 @@
 import UIKit
 
 final class ResultViewController: UIViewController {
-
+    
+    // MARK: - IB Outlets
     @IBOutlet var resultImage: UIImageView!
     @IBOutlet var resultLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     
+    // MARK: - Public Properties
     var answers: [Answer]!
+    var correctAnswers: [Answer]!
+    var questions: [Question]!
     
+    // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         updateResult()
     }
 
+    // MARK: - Override Methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let mistakeVC = segue.destination as? MistakeViewController else { return }
+        mistakeVC.correctAnswers = correctAnswers
+        mistakeVC.answersChosen = answers
+        mistakeVC.questions = questions
+    }
+
+    // MARK: - IB Actions
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }

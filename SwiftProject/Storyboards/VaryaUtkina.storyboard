@@ -5,6 +5,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QZP-Gk-IfX">
-                                <rect key="frame" x="0.0" y="111" width="320" height="4"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="4"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="bkn-KX-nZM"/>
                                 </constraints>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="j4Q-Fe-2Gp">
-                                <rect key="frame" x="16" y="123" width="288" height="437"/>
+                                <rect key="frame" x="16" y="76" width="288" height="484"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Er-S6-6du">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="150"/>
@@ -32,7 +33,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9WN-cC-5EE">
-                                        <rect key="frame" x="0.0" y="189" width="288" height="248"/>
+                                        <rect key="frame" x="0.0" y="236" width="288" height="248"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrN-me-0Cn">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
@@ -95,7 +96,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="XV5-WK-pRV">
-                                <rect key="frame" x="16" y="123" width="288" height="437"/>
+                                <rect key="frame" x="16" y="76" width="288" height="484"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6WM-GK-ad8">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="166"/>
@@ -118,7 +119,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AEz-2x-6hy">
-                                        <rect key="frame" x="0.0" y="255" width="288" height="182"/>
+                                        <rect key="frame" x="0.0" y="302" width="288" height="182"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQX-if-WJE">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
@@ -240,13 +241,28 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbh-WK-wOY">
+                                <rect key="frame" x="16" y="514" width="288" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Посмотреть ошибки" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="1" green="0.85882352939999995" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="0.79215686269999996" green="0.4823529412" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="dPL-A8-N9P" kind="presentation" id="ZhI-eT-Jo3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IIg-Ft-6QE"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.92156862745098034" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="IIg-Ft-6QE" firstAttribute="bottom" secondItem="dbh-WK-wOY" secondAttribute="bottom" constant="16" id="BrN-OM-pme"/>
                             <constraint firstItem="mxx-Cs-fxL" firstAttribute="height" secondItem="du3-NI-6BS" secondAttribute="height" multiplier="0.352113" id="EC6-s1-oGP"/>
+                            <constraint firstItem="dbh-WK-wOY" firstAttribute="leading" secondItem="IIg-Ft-6QE" secondAttribute="leading" constant="16" id="U37-M2-415"/>
                             <constraint firstItem="id5-wH-sx1" firstAttribute="centerY" secondItem="du3-NI-6BS" secondAttribute="centerY" id="VqJ-qJ-Zk0"/>
                             <constraint firstItem="id5-wH-sx1" firstAttribute="centerX" secondItem="du3-NI-6BS" secondAttribute="centerX" id="nt0-0C-Szf"/>
+                            <constraint firstItem="IIg-Ft-6QE" firstAttribute="trailing" secondItem="dbh-WK-wOY" secondAttribute="trailing" constant="16" id="vGl-Gv-0Sl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="In3-HI-fq4">
@@ -267,16 +283,79 @@
             </objects>
             <point key="canvasLocation" x="3533" y="2"/>
         </scene>
+        <!--Ошибки-->
+        <scene sceneID="xLc-r5-VA8">
+            <objects>
+                <tableViewController id="iqN-QL-lDN" customClass="MistakeViewController" customModule="SwiftProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="AA3-qt-4h6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mistakeCell" textLabel="f1t-Rr-X0r" detailTextLabel="Bdr-Hb-Etf" style="IBUITableViewCellStyleSubtitle" id="Apf-Sz-2tE">
+                                <rect key="frame" x="0.0" y="50" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Apf-Sz-2tE" id="hb7-aK-WCa">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f1t-Rr-X0r">
+                                            <rect key="frame" x="16" y="6" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bdr-Hb-Etf">
+                                            <rect key="frame" x="16" y="22.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.96862745100000003" green="0.92156862750000001" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iqN-QL-lDN" id="J5p-5I-MY0"/>
+                            <outlet property="delegate" destination="iqN-QL-lDN" id="v6g-8T-uFA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ошибки" id="hcP-Pm-mXd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KaC-yM-AAZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5249" y="7"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fOJ-2S-ywf">
+            <objects>
+                <navigationController id="dPL-A8-N9P" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="69p-bN-rRS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="104.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iqN-QL-lDN" kind="relationship" relationship="rootViewController" id="hpj-co-kZk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqW-Rx-44G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4274" y="7"/>
+        </scene>
         <!--VaryaUtkina-->
         <scene sceneID="RuD-P5-S6q">
             <objects>
                 <navigationController title="VaryaUtkina" automaticallyAdjustsScrollViewInsets="NO" id="lU8-Ch-AFD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2Bc-K7-rlf">
-                        <rect key="frame" x="0.0" y="20" width="320" height="91"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Bc-K7-rlf">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="0.0"/>
+                            <color key="textColor" red="0.50980392159999999" green="0.22352941179999999" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
@@ -295,5 +374,8 @@
     </scenes>
     <resources>
         <image name="succeed" width="700" height="700"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

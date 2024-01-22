@@ -93,6 +93,6 @@ struct Answer {
 }
 
 enum QuestionType {
-    case correct
+    case correct    
     case wrong
 }

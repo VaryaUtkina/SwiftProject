@@ -30,6 +30,9 @@ final class QuestionsViewController: UIViewController {
     private var questionIndex = 0
     private let questions = Question.getQuestions().shuffled()
     private var answersChosen: [Answer] = []
+    private var correctAnswers: [Answer] {
+        questions.flatMap { $0.answers }.filter { $0.type == .correct }
+    }
     private var currentQuestion: Question {
         questions[questionIndex]
     }
@@ -46,6 +49,8 @@ final class QuestionsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let resultVC = segue.destination as? ResultViewController else { return }
         resultVC.answers = answersChosen
+        resultVC.correctAnswers = correctAnswers
+        resultVC.questions = questions
     }
     
     // MARK: - Override Methods
@@ -74,6 +79,7 @@ private extension QuestionsViewController {
         }
         
         title = "Вопрос №\(questionIndex + 1) из \(questions.count)"
+
         
         let totalProgress = Float(questionIndex) / Float(questions.count)
         questionProgressView.setProgress(totalProgress, animated: true)
